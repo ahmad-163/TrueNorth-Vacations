@@ -11,7 +11,7 @@ import Footer from './Footer';
 function AboutPage() {
   return (
     <>
-      <Navbar logo="/src/assets/logo.png" />
+      <Navbar logo="/images/logo.png" />
       <AboutUs />                         {/* Our story */}
       <TravelWithUS />                    {/* Our services */}
       <LiveStatsCounter />                {/* 🔥 Achievements */}

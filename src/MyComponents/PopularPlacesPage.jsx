@@ -8,7 +8,7 @@ import Footer from './Footer';
 function PopularPlacesPage() {
   return (
     <>
-      <Navbar logo="/src/assets/logo.png" />
+      <Navbar logo="/images/logo.png" />
       <PopularPlaces showAll={true} />    {/* All 41 destinations */}
       <Maps />                  {/* 🔥 Explore by region */}
       <Para />                            {/* Context about Pakistan */}

@@ -15,8 +15,8 @@ import Footer from './Footer';
 function HomePage() {
   return (
     <>
-      <Navbar logo="/src/assets/logo.png" />
-      <Hero  banner="/src/assets/banner.jpg"/>                    {/* 🔥 Epic entrance */}
+      <Navbar logo="/images/logo.png" />
+      <Hero  banner="/images/banner.jpg"/>                    {/* 🔥 Epic entrance */}
       <PopularPlaces limit={6} />         {/* Top 6 destinations */}
       <CurrentDeals limit={3} />          {/* Top 3 deals */}
       <LiveStatsCounter />                {/* 🔥 Animated numbers */}

@@ -8,7 +8,7 @@ import Footer from './Footer';
 function ContactPage() {
   return (
     <>
-      <Navbar logo="/src/assets/logo.png" />
+      <Navbar logo="/images/logo.png" />
       <ContactUs />                       {/* Contact form */}
       <Maps />                  {/* 🔥 Office locations */}
       <TravelWithUS />                    {/* Quick info */}

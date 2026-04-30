@@ -8,7 +8,7 @@ import Footer from './Footer';
 function CurrentDealsPage() {
   return (
     <>
-      <Navbar logo="/src/assets/logo.png" />
+      <Navbar logo="/images/logo.png" />
       <CurrentDeals showAll={true} />     {/* All 10 deals */}
       <TravelWithUS />                    {/* Reassurance */}
       <Testimonials />            {/* 🔥 Social proof */}

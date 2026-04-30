@@ -6,7 +6,7 @@ import Register from './Register';
 function RegisterPage() {
   return (
     <>
-     <Navbar logo="/src/assets/logo.png" />
+     <Navbar logo="/images/logo.png" />
       <section 
         className="position-relative d-flex align-items-center justify-content-center"
         style={{
