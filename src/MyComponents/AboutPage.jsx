@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import AboutUs from './AboutUs';
 import TravelWithUS from './TravelWithUS';
 import LiveStatsCounter from './LiveStatsCounter';  // WOW FACTOR
-import Carousel from './carousel';
+import Carousel from './Carousel';
 import Media from './Media';
 import Para from './Para';
 import Footer from './Footer';
