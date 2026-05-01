@@ -14,8 +14,8 @@ import Footer from './Footer';
 function HomePage() {
   return (
     <>
-      <Navbar logo="/src/assets/logo.png" />
-      <Hero banner="/src/assets/banner.jpg" />
+      <Navbar logo="/logo.png" />
+      <Hero banner="/banner.jpg" />
       <LiveStatsCounter />
       <CurrentDeals limit={3} />
       <PopularPlaces limit={3} />

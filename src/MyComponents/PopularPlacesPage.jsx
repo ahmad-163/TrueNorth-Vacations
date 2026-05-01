@@ -10,7 +10,7 @@ import SigDest from './SigDest';
 function PopularPlacesPage() {
   return (
     <>
-      <Navbar logo="/src/assets/logo.png" />
+      <Navbar logo="/logo.png" />
       <PopularPlaces showAll={true} />   
       <SigDest/>
       <Media/>

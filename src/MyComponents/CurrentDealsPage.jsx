@@ -11,7 +11,7 @@ import AppCTA from './AppCTA';
 function CurrentDealsPage() {
   return (
     <>
-      <Navbar logo="/src/assets/logo.png" />
+      <Navbar logo="/logo.png" />
       <CurrentDeals showAll={true} />
       <Forthcoming/>     
       <AppCTA/>

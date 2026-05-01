@@ -6,7 +6,7 @@ import Footer from './Footer';
 function LoginPage() {
   return (
     <>
-      <Navbar logo="/images/logo.png" />
+      <Navbar logo="/logo.png" />
       <section 
         className="position-relative d-flex align-items-center justify-content-center"
         style={{

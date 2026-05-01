@@ -12,7 +12,7 @@ import Testimonials from './Testimonials';
 function AboutPage() {
   return (
     <>
-      <Navbar logo="/src/assets/logo.png" />
+      <Navbar logo="/logo.png" />
       <AboutUs />   
       <Para /> 
       <TravelWithUS/>
