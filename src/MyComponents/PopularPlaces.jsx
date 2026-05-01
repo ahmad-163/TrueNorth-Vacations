@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function PopularPlaces() {
+function PopularPlaces({ limit }) {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [hoveredCard, setHoveredCard] = useState(null);
   const [viewMode, setViewMode] = useState('grid'); // grid or list
@@ -151,6 +151,11 @@ function PopularPlaces() {
     }
   });
 
+  // Apply limit if provided
+  if (limit) {
+    filteredPlaces = filteredPlaces.slice(0, limit);
+  }
+
   return (
     <div className="bg-white">
       {/* Hero Section with Particle Effect */}
@@ -236,7 +241,7 @@ function PopularPlaces() {
           </div>
         </div>
 
-        <style jsx>{`
+        <style>{`
           @keyframes twinkle {
             0%, 100% {
               opacity: 0.3;
@@ -250,12 +255,9 @@ function PopularPlaces() {
         `}</style>
       </section>
 
-      {/* Advanced Filter Bar - Sticky */}
+      {/* Advanced Filter Bar - NOT sticky (removed position sticky, top, zIndex) */}
       <section className="shadow-sm" style={{ 
         background: '#fafbfc', 
-        position: 'sticky', 
-        top: '70px', 
-        zIndex: 999,
         borderBottom: '2px solid #e8e8e8'
       }}>
         <div className="container py-3">
@@ -797,7 +799,7 @@ function PopularPlaces() {
           )}
         </div>
 
-        <style jsx>{`
+        <style>{`
           @keyframes fadeInUp {
             from {
               opacity: 0;

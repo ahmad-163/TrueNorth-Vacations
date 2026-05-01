@@ -7,17 +7,17 @@ import Carousel from './Carousel';
 import Media from './Media';
 import Para from './Para';
 import Footer from './Footer';
+import Testimonials from './Testimonials';
 
 function AboutPage() {
   return (
     <>
-      <Navbar logo="/images/logo.png" />
-      <AboutUs />                         {/* Our story */}
-      <TravelWithUS />                    {/* Our services */}
-      <LiveStatsCounter />                {/* 🔥 Achievements */}
-      <Carousel />                        {/* Team/journey carousel */}
-      <Media />                           {/* Video content */}
-      <Para />                            {/* Pakistan context */}
+      <Navbar logo="/src/assets/logo.png" />
+      <AboutUs />   
+      <Para /> 
+      <TravelWithUS/>
+      <LiveStatsCounter/>
+      <Testimonials/>                    
       <Footer />
     </>
   );

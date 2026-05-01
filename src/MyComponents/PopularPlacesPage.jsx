@@ -4,15 +4,17 @@ import PopularPlaces from './PopularPlaces';  // showAll={true}
 import Maps from './Maps';  // WOW FACTOR
 import Para from './Para';
 import Footer from './Footer';
+import Media from './Media';
+import SigDest from './SigDest';
 
 function PopularPlacesPage() {
   return (
     <>
-      <Navbar logo="/images/logo.png" />
-      <PopularPlaces showAll={true} />    {/* All 41 destinations */}
-      <Maps />                  {/* 🔥 Explore by region */}
-      <Para />                            {/* Context about Pakistan */}
-      <Footer />
+      <Navbar logo="/src/assets/logo.png" />
+      <PopularPlaces showAll={true} />   
+      <SigDest/>
+      <Media/>
+      <Footer/>                           
     </>
   );
 }

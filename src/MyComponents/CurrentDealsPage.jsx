@@ -4,14 +4,17 @@ import CurrentDeals from './CurrentDeals';  // showAll={true}
 import TravelWithUS from './TravelWithUS';
 import Testimonials from './Testimonials';
 import Footer from './Footer';
+import SigDest from './SigDest';
+import Forthcoming from './Forthcoming';
+import AppCTA from './AppCTA';
 
 function CurrentDealsPage() {
   return (
     <>
-      <Navbar logo="/images/logo.png" />
-      <CurrentDeals showAll={true} />     {/* All 10 deals */}
-      <TravelWithUS />                    {/* Reassurance */}
-      <Testimonials />            {/* 🔥 Social proof */}
+      <Navbar logo="/src/assets/logo.png" />
+      <CurrentDeals showAll={true} />
+      <Forthcoming/>     
+      <AppCTA/>
       <Footer />
     </>
   );

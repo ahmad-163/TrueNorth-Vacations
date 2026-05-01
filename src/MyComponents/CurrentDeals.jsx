@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function CurrentDeals() {
+function CurrentDeals({ limit }) {
   const [hoveredDeal, setHoveredDeal] = useState(null);
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [timeLeft, setTimeLeft] = useState({ days: 23, hours: 14, minutes: 32, seconds: 45 });
@@ -121,9 +121,14 @@ function CurrentDeals() {
     { id: 'weekend', label: 'Weekend', icon: '🎒' }
   ];
 
-  const filteredDeals = selectedFilter === 'all' 
+  let filteredDeals = selectedFilter === 'all' 
     ? deals 
     : deals.filter(deal => deal.category === selectedFilter);
+
+  // Apply limit if provided
+  if (limit) {
+    filteredDeals = filteredDeals.slice(0, limit);
+  }
 
   const getUrgencyColor = (urgency) => {
     switch(urgency) {
@@ -228,33 +233,21 @@ function CurrentDeals() {
           <div className="small opacity-75">⚡ Hurry! Deals end soon</div>
         </div>
 
-        <style jsx>{`
+        <style>{`
           @keyframes float {
-            0%, 100% {
-              transform: translateY(0) rotate(0deg);
-            }
-            50% {
-              transform: translateY(-20px) rotate(180deg);
-            }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
           }
-
           @keyframes pulse {
-            0%, 100% {
-              transform: scale(1);
-            }
-            50% {
-              transform: scale(1.05);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
           }
         `}</style>
       </section>
 
-      {/* Filter Section - Sticky */}
+      {/* Filter Section - NOT sticky (removed position sticky, top, zIndex) */}
       <section className="py-4 shadow-sm" style={{ 
         background: '#fafbfc', 
-        position: 'sticky', 
-        top: '70px', 
-        zIndex: 999,
         borderBottom: '1px solid #e8e8e8'
       }}>
         <div className="container">
@@ -347,7 +340,7 @@ function CurrentDeals() {
                       }}
                     />
 
-                    {/* Discount Badge - Animated */}
+                    {/* Discount Badge */}
                     <div className="position-absolute top-0 end-0 m-3">
                       <div 
                         className="badge px-4 py-2"
@@ -382,7 +375,7 @@ function CurrentDeals() {
                       </span>
                     </div>
 
-                    {/* Urgency Indicator - Bottom */}
+                    {/* Urgency Indicator */}
                     <div className="position-absolute bottom-0 start-0 end-0 p-3">
                       <div 
                         className="d-flex align-items-center gap-2 text-white p-2 rounded-3"
@@ -424,17 +417,14 @@ function CurrentDeals() {
                       {deal.title}
                     </h5>
 
-                    {/* Features - Improved Layout */}
+                    {/* Features */}
                     <div className="mb-4">
                       <div className="row g-2">
                         {deal.features.map((feature, index) => (
                           <div key={index} className="col-6">
                             <div 
                               className="d-flex align-items-center gap-2 p-2 rounded-2"
-                              style={{
-                                background: '#f0fdf7',
-                                fontSize: '0.8rem'
-                              }}
+                              style={{ background: '#f0fdf7', fontSize: '0.8rem' }}
                             >
                               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3eb489" strokeWidth="3">
                                 <polyline points="20 6 9 17 4 12"></polyline>
@@ -448,7 +438,7 @@ function CurrentDeals() {
                       </div>
                     </div>
 
-                    {/* Pricing - Enhanced */}
+                    {/* Pricing */}
                     <div className="mb-4 p-3 rounded-3" style={{ background: '#fafbfc' }}>
                       <div className="d-flex align-items-center justify-content-between mb-2">
                         <div>
@@ -513,26 +503,19 @@ function CurrentDeals() {
           </div>
         </div>
 
-        <style jsx>{`
+        <style>{`
           @keyframes bounce {
-            0%, 100% {
-              transform: scale(1) rotate(0deg);
-            }
-            25% {
-              transform: scale(1.1) rotate(-5deg);
-            }
-            75% {
-              transform: scale(1.1) rotate(5deg);
-            }
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(-5deg); }
+            75% { transform: scale(1.1) rotate(5deg); }
           }
         `}</style>
       </section>
 
-      {/* Newsletter Section - Enhanced */}
+      {/* Newsletter Section */}
       <section className="py-5 position-relative overflow-hidden" style={{
         background: 'linear-gradient(135deg, #3eb489 0%, #0b5351 100%)'
       }}>
-        {/* Animated Background */}
         <div className="position-absolute w-100 h-100 top-0 start-0" style={{ opacity: 0.1 }}>
           <div style={{
             backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
@@ -604,19 +587,15 @@ function CurrentDeals() {
           </div>
         </div>
 
-        <style jsx>{`
+        <style>{`
           @keyframes slideBackground {
-            from {
-              background-position: 0 0;
-            }
-            to {
-              background-position: 30px 30px;
-            }
+            from { background-position: 0 0; }
+            to { background-position: 30px 30px; }
           }
         `}</style>
       </section>
 
-      {/* Why Book Now - Redesigned */}
+      {/* Why Book Now */}
       <section className="py-5">
         <div className="container">
           <div className="text-center mb-5">
